@@ -5,7 +5,7 @@ Consider a finite tree with at least two modules. Module $`v`$ holds a $`k`$-qub
 The modules have arbitrary local operations and classical communication. Edge $`e`$ supplies at most $`b_e`$ Bell pairs, with $`b_e`$ a nonnegative integer. There is no other shared quantum resource. Local scratch registers and classical randomness are free. The cost is a hard budget per execution, and every outcome counts. With $`b=\min(2k,\min_e b_e)`$, the optimum is
 
 ```math
-\inf_{\mathcal E}\frac12\lVert\mathcal E-\operatorname{Ad}_U\rVert_\diamond
+\inf_{\mathcal E}\frac12\lVert\mathcal E-\mathrm{Ad}_U\rVert_\diamond
 =1-2^{b-2k}.
 ```
 
@@ -26,7 +26,7 @@ Write $`b=2i+m`$, where $`m\in\{0,1\}`$, and split $`A=(H,M,L)`$ into $`h=k-i-m`
 Let $`d=2^h`$. Choose an independent, uniformly random high address $`j`$ and a uniformly random high character $`t`$. In every module, use $`(j,M,L)`$ to select the table entry. The value of $`M`$ is the shared measurement result, and $`L`$ remains coherent. Also multiply by $`(-1)^{t\cdot H}`$, a product of local $`Z`$ phases. Denote the corresponding diagonal unitary, with the appropriate middle slice in each of its parity blocks, by $`V_{j,t}`$. The implemented channel is
 
 ```math
-\mathcal E=\frac{1}{d^2}\sum_{j,t}\operatorname{Ad}_{V_{j,t}}\circ\mathcal D_M.
+\mathcal E=\frac{1}{d^2}\sum_{j,t}\mathrm{Ad}_{V_{j,t}}\circ\mathcal D_M.
 ```
 
 Character orthogonality gives the operator identity
@@ -35,7 +35,7 @@ Character orthogonality gives the operator identity
 U=\frac{1}{d}\sum_{j,t}(-1)^{t\cdot j}V_{j,t}.
 ```
 
-In the Kraus representation of $`\mathcal E`$, keep the middle identity-character sector and mix its $`d^2`$ Kraus operators using a unit row with entries $`(-1)^{t\cdot j}/d`$. The resulting Kraus family contains $`U/(d\sqrt{2^m})`$. Consequently $`\mathcal E=p\operatorname{Ad}_U+(1-p)\mathcal N`$ for a channel $`\mathcal N`$ when $`p<1`$, with $`p=d^{-2}2^{-m}=2^{b-2k}`$. For $`p=1`$, the channel is exactly $`\operatorname{Ad}_U`$. The half-diamond error is at most $`1-p`$. No accepted-only branch or access to the discarded outcome is required.
+In the Kraus representation of $`\mathcal E`$, keep the middle identity-character sector and mix its $`d^2`$ Kraus operators using a unit row with entries $`(-1)^{t\cdot j}/d`$. The resulting Kraus family contains $`U/(d\sqrt{2^m})`$. Consequently $`\mathcal E=p\mathrm{Ad}_U+(1-p)\mathcal N`$ for a channel $`\mathcal N`$ when $`p<1`$, with $`p=d^{-2}2^{-m}=2^{b-2k}`$. For $`p=1`$, the channel is exactly $`\mathrm{Ad}_U`$. The half-diamond error is at most $`1-p`$. No accepted-only branch or access to the discarded outcome is required.
 
 ## Matching lower bound on each edge
 

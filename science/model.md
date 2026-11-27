@@ -22,12 +22,12 @@ On a superposition, the signs change relative phases. A classical evaluation of 
 | Initial network resources | Edge $`e`$ has at most $`b_e`$ ideal Bell pairs. Each $`b_e`$ is a nonnegative integer fixed before the run. |
 | Local operations | Local gates, preparation, measurements and classical processing, with ancillary quantum storage. |
 | Communication | Classical messages and shared randomness. The interactive construction sends messages between adjacent modules. |
-| Accuracy | Half the diamond norm between the unconditional implemented channel and $`\operatorname{Ad}_U`$, where $`\operatorname{Ad}_U(\rho)=U\rho U^\dagger`$. |
+| Accuracy | Half the diamond norm between the unconditional implemented channel and $`\mathrm{Ad}_U`$, where $`\mathrm{Ad}_U(\rho)=U\rho U^\dagger`$. |
 
 For a channel $`\mathcal E`$ the accuracy criterion is
 
 ```math
-\delta(\mathcal E,U)=\frac12\left\|\mathcal E-\operatorname{Ad}_U\right\|_\diamond .
+\delta(\mathcal E,U)=\frac12\left\|\mathcal E-\mathrm{Ad}_U\right\|_\diamond .
 ```
 
 The diamond norm includes arbitrary reference inputs. A protocol's classical outcomes are used for its feedforward and discarded for this comparison. Each charged Bell pair is a separate shared input resource. The budget is a per-run cap, including any pairs used before the first message.

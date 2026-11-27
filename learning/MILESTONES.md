@@ -42,7 +42,7 @@ The 12 background milestones connect the input registers, classical messages, an
 
 **Central question.** What must the implementation preserve about a qubit entangled with another system?
 
-**Understanding target.** Interpret the target as $`\mathcal U\otimes\operatorname{id}_R`$ on data and reference together. Use a partial trace to describe the state available at one location without access to the other registers.
+**Understanding target.** Interpret the target as $`\mathcal U\otimes\mathrm{id}_R`$ on data and reference together. Use a partial trace to describe the state available at one location without access to the other registers.
 
 **Prerequisites.** [M01](#m01-address-and-data-registers), [M02](#m02-from-a-basis-sign-to-a-quantum-gate).
 

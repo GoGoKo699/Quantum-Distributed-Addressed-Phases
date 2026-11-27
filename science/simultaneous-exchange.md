@@ -17,18 +17,18 @@ Consider a diagonal unitary with basis phases $`u_{xy}`$, where $`|u_{xy}|=1`$. 
 Denote the pure shared resource by $`|\eta\rangle_{L_0R_0}`$. Retain local instrument environments, so Bob's first instrument has one linear map $`K_b`$ into his retained space for each classical message $`b`$, with $`\sum_bK_b^\dagger K_b=I`$. Given $`b`$, Bob's pre-exchange operation produces an unnormalized pure vector $`|\beta_b\rangle_{R B_{\mathrm{mid}} L_0}`$ if Alice's first instrument is omitted. Write
 
 ```math
-\sigma_b=\operatorname{Tr}_{L_0}|\beta_b\rangle\langle\beta_b|,
+\sigma_b=\mathrm{Tr}_{L_0}|\beta_b\rangle\langle\beta_b|,
 \qquad
 \sigma=\sum_b |b\rangle\langle b|\otimes \sigma_b .
 ```
 
 The same reduced state $`\sigma`$ results if Alice's first instrument is performed, its message and output discarded. This uses trace preservation on Alice's side and simultaneous messages. In particular, $`\sigma`$ is independent of the Alice input label $`x`$.
 
-For each $`x`$, let $`D_x=\operatorname{diag}(u_{xy})_{y\in\mathcal Y}`$ act on $`R`$. Suppose the actual output on the task registers and references has expectation at least $`1-\delta`$ in the ideal pure output on $`|\chi\rangle`$. Then there is a joint state $`\tau`$ on the same registers as $`\sigma`$ for which
+For each $`x`$, let $`D_x=\mathrm{diag}(u_{xy})_{y\in\mathcal Y}`$ act on $`R`$. Suppose the actual output on the task registers and references has expectation at least $`1-\delta`$ in the ideal pure output on $`|\chi\rangle`$. Then there is a joint state $`\tau`$ on the same registers as $`\sigma`$ for which
 
 ```math
 \sum_x p_x\,T(\sigma,D_x\tau D_x^\dagger)\leq \sqrt{\delta},
-\tag{1}
+\qquad (1)
 ```
 
 with $`T(\rho,\zeta)=\|\rho-\zeta\|_1/2`$. Also, measuring $`R`$ in its label basis in $`\sigma`$ gives a joint distribution of $`(Y,b)`$ within total variation distance $`\sqrt{\delta}`$ of a uniform $`Y`$ independent of $`b`$.
@@ -45,7 +45,7 @@ Purity of $`|\beta_b\rangle`$ equates this entropy with that of $`L_0`$ in the s
 
 ```math
 E(|\eta\rangle)=S(L_0)\geq \sum_b\Pr(b)\,S(L_0\mid b)\geq\log_2 s.
-\tag{2}
+\qquad (2)
 ```
 
 In the addressed phase write $`n=2^k`$. Across each tree cut, locally restricting the inputs suffices to realize every pair of aggregate addresses $`a,b\in\mathbb F_2^k`$ and aggregate tables $`z,w\in\mathbb F_2^n`$ by varying one module per side. The phase is
@@ -63,7 +63,7 @@ Restrict to one varying address $`x`$ on Alice's side and one varying $`n`$-qubi
 ```math
 T(\sigma,\tau_i)+T(\sigma,D_i\tau_i D_i)\le2t,
 \qquad T(\sigma,D_i\sigma D_i)\le2t .
-\tag{3}
+\qquad (3)
 ```
 
 The second inequality follows by the triangle inequality and unitary invariance. The phase $`D_i`$ has signs $`+1,-1`$ on the two subspaces of $`R`$ with $`w_i=0,1`$, whose projectors are $`P^i_0,P^i_1`$. For fixed $`i`$, let $`\omega_{b,\ell}`$ be Alice's subnormalized state on $`L_0`$, formed by projecting $`|\beta_b\rangle`$ with $`P^i_\ell`$ and tracing $`RB_{\mathrm{mid}}`$. Uhlmann's theorem in its overlap form gives
@@ -94,7 +94,7 @@ Together these bounds give the explicit robust estimate
 ```math
 E(|\eta\rangle)\ge(n-1)\bigl[1-t-h_2(t)\bigr]-h_2(t),
 \qquad t=\sqrt{\delta},\quad 0\le\delta\le 1/4 .
-\tag{4}
+\qquad (4)
 ```
 
 For example, $`\delta\le1/400`$ yields a lower bound of more than $`0.66(n-1)-0.29`$ ebits. The same bound allows shared classical randomness and holds with entanglement of formation for a mixed resource. For either extension, condition on the shared seed or a chosen pure resource component. For each test separately, its ideal-projector failure probability averages to at most $`\delta`$ over that conditioning label. The average square root, hence the average transcript distance in the address-$`0`$ test and the average decoding error in each bit test, is at most $`t`$. The classical entropy continuity loss and the bit entropy upper bound can be averaged using the concavity of $`h_2(\min(v,1/2))`$ as a function of $`v\in[0,1]`$. The Holevo bound then applies to the averaged entanglement. Minimizing over pure decompositions gives the entanglement of formation claim.
