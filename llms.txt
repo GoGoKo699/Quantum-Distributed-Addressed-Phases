@@ -1,0 +1,33 @@
+# Quantum Distributed Addressed Phases
+
+This repository gives a compiler for a coherent distributed addressed phase and
+quantifies the Bell-pair requirements for interactive and simultaneous classical
+communication. The data tables are explicit quantum registers at the modules.
+
+## Scientific and learning routes
+
+- Start at README.md for the results, a numerical example and the checks.
+- Use science/model.md for the gate definition, references, Bell-pair budget,
+  diamond norm convention and scope of each communication model.
+- Use science/interactive-tree.md for the reversible address routing, exact
+  hard-budget error formula and the matching Choi-state lower bound.
+- Use science/simultaneous-exchange.md for the exact phase-column bound, the
+  fixed-error bound and the two-module, one-exchange construction.
+- Use learning/WATROUS_BRIDGE.md and learning/MILESTONES.md for a textbook bridge
+  and the ordered project study route.
+- Run the two Python commands in README.md for finite exact-arithmetic checks.
+  Those checks test protocol branches and the discrete identities used in the
+  tree frontier. The general bounds are proved in the science pages.
+
+## Distinctions to preserve
+
+- The hard Bell-pair cap applies per edge and per execution. Modules hold
+  the tables explicitly and communicate through classical messages.
+- The error is half diamond distance between unconditional channels, including
+  inputs with references. The ideal Kraus weight is a component of the
+  unconditional channel.
+- The exact interactive result holds on all trees with at least two modules.
+  The one-exchange lower bounds apply across each cut with one simultaneous
+  classical exchange. The matching-order one-exchange upper bound is bipartite.
+- The separation grows exponentially in address length k and linearly in table
+  size 2^k. The link model assumes ideal Bell pairs and charges only their count.
