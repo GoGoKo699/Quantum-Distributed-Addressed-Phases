@@ -33,7 +33,7 @@ The model supplies ideal Bell pairs and permits local quantum computation and cl
 - [One simultaneous exchange](science/simultaneous-exchange.md)
 - [Learning milestones](learning/MILESTONES.md) and [Watrous bridge](learning/WATROUS_BRIDGE.md)
 
-Run the exact-arithmetic verification with Python 3:
+Run both exact-arithmetic checks with Python 3.
 
 ```bash
 python3 verify/verify_interactive_tree.py
@@ -41,3 +41,7 @@ python3 verify/verify_simultaneous_exchange.py
 ```
 
 The tree check covers measurement and cleanup branches on a three-module path and the Walsh, slice and Choi calculations through three address bits. The one-exchange check covers the remote controlled-Z measurement branches and the local lookup reduction. The linked science pages give the general proofs.
+
+## Purpose and contact
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
