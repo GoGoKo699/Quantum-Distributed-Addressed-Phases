@@ -1,0 +1,16 @@
+{
+  "README.md": [
+    "Run the addressed phase"
+  ],
+  "science/interactive-tree.md": [
+    "Coherently collecting and distributing an address",
+    "Operating with fewer Bell pairs"
+  ],
+  "science/simultaneous-exchange.md": [
+    "Bipartite protocol in one exchange",
+    "Fixed-error lower bound for addressed phases"
+  ],
+  "learning/WATROUS_BRIDGE.md": [
+    "One address bit on two modules"
+  ]
+}
