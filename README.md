@@ -26,6 +26,16 @@ The one-exchange lower bound grows linearly with the size of the explicit table,
 
 The model supplies ideal Bell pairs and permits local quantum computation and classical messages. Each processor holds its table explicitly and implements the local lookup with ordinary gates. The link bounds measure Bell pairs independently of the local gate count.
 
+## Run the addressed phase
+
+Set aside the supplied Bell pairs on each edge and initialize local scratch in the zero state. Keep the original address and table registers at their modules.
+
+1. **Gather and broadcast.** Root the tree and copy each local address into an accumulator with CNOTs. For each copied bit, CNOT it into the sending Bell half, measure that half in the computational basis, and send the result. The receiver applies X to its half on outcome one. Gather bottom-up, XORing each received child accumulator into its parent's accumulator. Then copy the root's global XOR address top-down. This uses one Bell pair per bit, per edge, in each direction.
+2. **Apply the local phase and clear scratch.** At each module, compute the address prefixes with Toffolis using positive and negative address controls, apply CZ from each leaf flag to its table entry, and uncompute the flags. Measure routing scratch in the X basis. Use the known linear form of each scratch bit to compute which original address bits need Z corrections, and send the correction bits to their modules. Return the original address and table registers. The [tree compiler](science/interactive-tree.md#coherently-collecting-and-distributing-an-address) counts the local decoder and separates message timing from the Bell-pair budget.
+3. **Respect a smaller edge budget.** Use the common budget capped at twice the address width. With `2i + m` pairs per edge, where `m` is zero or one, route `i` low bits in both directions. If `m` is one, gather the next bit, measure its global parity at the root, broadcast that result, and clear its remaining scratch as above. Draw the shared high slice and high character independently and uniformly for the table lookups and local Z phases, respectively. Keep all branches and discard the classical record after feedforward. The [budgeted circuit](science/interactive-tree.md#operating-with-fewer-bell-pairs) attains the stated unconditional error.
+
+For **two modules with one simultaneous exchange**, relabel each local table by XOR with its own address. Apply the baseline phase from table entry zero locally. For every nonzero index, compute the address-equality flag on one side and the parity of that entry with entry zero on the other. For each [remote CZ](science/simultaneous-exchange.md#bipartite-protocol-in-one-exchange), the control side CNOTs its flag into its Bell half and measures that half in Z. The target side applies CZ from its Bell half to its flag and measures that half in X. Once both sides have produced all results, exchange them together. Each side applies Z to its flag when the received result is one, then uncomputes its flags and table relabeling. The protocol performs these terms in both directions and consumes one Bell pair per remote CZ.
+
 ## Read and reproduce
 
 - [Gate model and resources](science/model.md)
